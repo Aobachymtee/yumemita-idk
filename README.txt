@@ -1,17 +1,27 @@
-=== HƯỚNG DẪN ĐĂNG LÊN GITHUB PAGES ===
+=== CẬP NHẬT PHIÊN BẢN V2: GALLERY & SOCIAL LINKS ===
 
-Bộ khung website này đã được thiết kế sẵn theo cấu trúc ĐA TRANG ĐỘNG (Multi-page Dynamic):
-- index.html: Trang chủ danh sách nhân vật & bài hát.
-- character.html: Trang hiển thị thông tin chi tiết từng gái (Tự đổi nội dung theo link ?id=...).
-- song.html: Trang xem lời dịch nhạc 3 cột (Tiếng Nhật, Romaji, Tiếng Việt).
-- data/data.json: File chứa toàn bộ thông tin nhân vật và lời dịch nhạc!
+Phiên bản này bổ sung 2 tính năng bồ yêu cầu:
+1. Thư viện ảnh (Gallery) cho từng gái (có tính năng click vào xem ảnh phóng to full màn hình).
+2. Nút liên kết MXH chính thức (Twitter/X, Instagram, YouTube, Note) sinh động.
 
-CÁCH THÊM BÀI HÁT / NHÂN VẬT MỚI:
-Bồ chỉ cần mở file `data/data.json` ra, copy thêm 1 đoạn thông tin nhân vật hoặc bài hát tương tự là xong!
-Không cần phải tự viết thêm file HTML mới!
+CÁCH ĐỔI/THÊM LINK MXH VÀ ẢNH CHO GÁI TRONG `data/data.json`:
+Mở file `data/data.json`, trong phần thông tin nhân vật bồ sẽ thấy:
 
-CÁCH ĐƯA LÊN GITHUB:
-1. Giải nén file ZIP này.
-2. Push toàn bộ các file (index.html, character.html, song.html, folder data/...) lên branch main trên Repository GitHub của bồ.
-3. Vào Repo -> Settings -> Pages -> Chọn branch `main` -> Save.
-4. Chờ 1-2 phút là trang web sẽ chạy online!
+"social_links": {
+  "twitter": "https://x.com/...",
+  "instagram": "https://instagram.com/...",
+  "youtube": "https://youtube.com/...",
+  "note": "https://note.com/..."
+},
+"gallery": [
+  "link_anh_1.jpg",
+  "link_anh_2.jpg",
+  "link_anh_3.jpg"
+]
+
+Bồ chỉ cần dán link ảnh/link MXH tương ứng vào là xong!
+
+CÁCH UP CẢ ẢNH CỤ THỂ VÀO REPO GITHUB (NẾU KHÔNG DÙNG LINK ẢNH ONLINE):
+- Bồ có thể tạo 1 folder tên `assets/` trong repo.
+- Bỏ các file ảnh vào folder đó (vd: `assets/yumemi_1.jpg`).
+- Trong file `data.json`, điền đường dẫn ảnh là: `"gallery": ["assets/yumemi_1.jpg"]`.

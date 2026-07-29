@@ -6,6 +6,7 @@
   <title>Thông Tin Nhân Vật - Yumemita</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body { font-family: 'Nunito', sans-serif; background-color: #fff9fb; }
     .brand-font { font-family: 'Comfortaa', cursive; }
@@ -30,6 +31,14 @@
     <div class="text-center py-12 text-slate-400">Đang tải thông tin nhân vật...</div>
   </main>
 
+  <!-- Image Modal / Lightbox for viewing full size images -->
+  <div id="image-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeModal()">
+    <div class="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl">
+      <img id="modal-img" src="" alt="Full view" class="w-full h-full object-contain">
+      <button onclick="closeModal()" class="absolute top-3 right-3 bg-white/80 text-slate-800 rounded-full w-9 h-9 font-bold flex items-center justify-center hover:bg-white shadow">✕</button>
+    </div>
+  </div>
+
   <footer class="bg-white border-t border-slate-100 py-6 text-center text-xs text-slate-400">
     <p>Yumemita Fanmade Project — Character Profile Page</p>
   </footer>
@@ -43,6 +52,45 @@
       .then(data => {
         const member = data.members.find(m => m.id === charId) || data.members[0];
         document.title = `${member.name} (${member.japanese_name}) - Yumemita Profile`;
+
+        // Render Social Links
+        const links = member.social_links || {};
+        let socialHtml = '';
+        if (links.twitter) {
+          socialHtml += `<a href="${links.twitter}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold hover:bg-slate-700 transition-colors shadow-sm"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>`;
+        }
+        if (links.instagram) {
+          socialHtml += `<a href="${links.instagram}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 text-white text-xs font-bold hover:opacity-90 transition-opacity shadow-sm"><i class="fa-brands fa-instagram"></i> Instagram</a>`;
+        }
+        if (links.youtube) {
+          socialHtml += `<a href="${links.youtube}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-600 text-white text-xs font-bold hover:bg-red-700 transition-colors shadow-sm"><i class="fa-brands fa-youtube"></i> YouTube</a>`;
+        }
+        if (links.note) {
+          socialHtml += `<a href="${links.note}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition-colors shadow-sm"><i class="fa-solid fa-note-sticky"></i> Note</a>`;
+        }
+
+        // Render Gallery Grid
+        const galleryList = member.gallery || [];
+        let galleryHtml = '';
+        if (galleryList.length > 0) {
+          galleryHtml = `
+            <div class="bg-white rounded-3xl p-6 md:p-8 border border-pink-100 shadow-sm mb-8">
+              <h2 class="brand-font text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-2.5 h-6 rounded-full inline-block" style="background-color: ${member.color}"></span> Bộ Sưu Tập Ảnh / Gallery
+              </h2>
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                ${galleryList.map(imgUrl => `
+                  <div class="aspect-square rounded-2xl overflow-hidden bg-slate-100 border border-slate-100 shadow-sm cursor-pointer group relative" onclick="openModal('${imgUrl}')">
+                    <img src="${imgUrl}" alt="Gallery Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold">
+                      <i class="fa-solid fa-magnifying-glass-plus text-lg"></i>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
 
         const content = document.getElementById('content');
         content.innerHTML = `
@@ -62,6 +110,11 @@
                 </div>
                 <h1 class="brand-font text-3xl md:text-4xl font-extrabold text-slate-800 mb-1">${member.name}</h1>
                 <p class="text-slate-400 font-semibold mb-4 text-base">${member.japanese_name}</p>
+
+                <!-- Social Media Buttons -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                  ${socialHtml}
+                </div>
 
                 <!-- Profile Table Grid -->
                 <div class="grid grid-cols-2 gap-3 text-sm bg-slate-50 p-4 rounded-2xl border border-slate-100 text-left">
@@ -90,8 +143,20 @@
             </h2>
             <p class="text-slate-600 leading-relaxed text-base">${member.bio}</p>
           </div>
+
+          <!-- Image Gallery Section -->
+          ${galleryHtml}
         `;
       });
+
+    function openModal(imgUrl) {
+      document.getElementById('modal-img').src = imgUrl;
+      document.getElementById('image-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('image-modal').classList.add('hidden');
+    }
   </script>
 </body>
 </html>
