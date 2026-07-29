@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dịch Nhạc - Yumemita</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Nunito', sans-serif; background-color: #fff9fb; }
+    .brand-font { font-family: 'Comfortaa', cursive; }
+  </style>
+</head>
+<body class="text-slate-700 min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-purple-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="brand-font text-2xl font-bold text-purple-600 tracking-wide flex items-center gap-2">
+        <span>✨</span> Yumemita Zone
+      </a>
+      <a href="index.html#songs" class="text-sm font-semibold text-slate-600 hover:text-purple-600 flex items-center gap-1">
+        ← Quay lại Danh Sách Nhạc
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Song Detail View -->
+  <main id="content" class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full">
+    <div class="text-center py-12 text-slate-400">Đang tải bản dịch nhạc...</div>
+  </main>
+
+  <footer class="bg-white border-t border-slate-100 py-6 text-center text-xs text-slate-400">
+    <p>Yumemita Fanmade Project — Song Lyrics & Translation</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const songId = params.get('id');
+
+    fetch('data/data.json')
+      .then(res => res.json())
+      .then(data => {
+        const song = data.songs.find(s => s.id === songId) || data.songs[0];
+        document.title = `${song.title} - Bản Dịch Tiếng Việt`;
+
+        const content = document.getElementById('content');
+        content.innerHTML = `
+          <!-- Song Info Header -->
+          <div class="bg-white rounded-3xl p-6 border border-purple-100 shadow-sm mb-8 flex flex-col sm:flex-row gap-6 items-center">
+            <img src="${song.cover}" alt="${song.title}" class="w-32 h-32 rounded-2xl object-cover shadow-sm">
+            <div class="text-center sm:text-left">
+              <span class="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-full">${song.type}</span>
+              <h1 class="brand-font text-2xl md:text-3xl font-extrabold text-slate-800 mt-2">${song.title}</h1>
+              <p class="text-slate-400 text-sm font-semibold">${song.japanese_title}</p>
+              <p class="text-xs text-slate-500 mt-2">Trình bày: <strong>${song.artist}</strong> | Dịch bởi: <strong>${song.translator}</strong></p>
+            </div>
+          </div>
+
+          <!-- Lyrics Display Columns -->
+          <div class="bg-white rounded-3xl p-6 md:p-8 border border-purple-100 shadow-sm">
+            <h2 class="brand-font text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <span class="w-2.5 h-6 bg-purple-500 rounded-full inline-block"></span> Lời Bài Hát & Bản Dịch
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <!-- Kanji Column -->
+              <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                <h3 class="font-bold text-purple-600 mb-3 text-xs uppercase tracking-wider">Tiếng Nhật (Kanji/Kana)</h3>
+                <pre class="whitespace-pre-wrap font-sans text-slate-700 leading-relaxed">${song.lyrics.japanese}</pre>
+              </div>
+
+              <!-- Romaji Column -->
+              <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                <h3 class="font-bold text-purple-600 mb-3 text-xs uppercase tracking-wider">Romaji</h3>
+                <pre class="whitespace-pre-wrap font-sans text-slate-700 leading-relaxed">${song.lyrics.romaji}</pre>
+              </div>
+
+              <!-- Vietnamese Column -->
+              <div class="bg-pink-50/50 p-4 rounded-2xl border border-pink-100">
+                <h3 class="font-bold text-pink-600 mb-3 text-xs uppercase tracking-wider">Lời Dịch Tiếng Việt</h3>
+                <pre class="whitespace-pre-wrap font-sans text-slate-800 font-semibold leading-relaxed">${song.lyrics.vietnamese}</pre>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+  </script>
+</body>
+</html>
