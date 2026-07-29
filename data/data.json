@@ -10,7 +10,19 @@
       "birthday": "15 tháng 4",
       "height": "158 cm",
       "likes": "Món ngọt, Guitar, Viết nhạc",
-      "bio": "Yumemi là trưởng nhóm và là nguồn năng lượng của cả band. Cô sở hữu chất giọng trong trẻo cùng ước mơ truyền tải cảm xúc qua từng giai điệu."
+      "bio": "Yumemi là trưởng nhóm và là nguồn năng lượng của cả band. Cô sở hữu chất giọng trong trẻo cùng ước mơ truyền tải cảm xúc qua từng giai điệu.",
+      "social_links": {
+        "twitter": "https://x.com/yumemi_official",
+        "instagram": "https://instagram.com/yumemi_official",
+        "youtube": "https://youtube.com/@yumemi_channel",
+        "note": "https://note.com/yumemi_official"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80"
+      ]
     },
     {
       "id": "mira",
@@ -22,7 +34,18 @@
       "birthday": "20 tháng 9",
       "height": "162 cm",
       "likes": "Đọc sách, Trà chiều, Piano classical",
-      "bio": "Mira chịu trách nhiệm sáng tác bài hát cho nhóm. Tính cách điềm tĩnh, sâu sắc và luôn quan tâm cẩn thận đến các thành viên khác."
+      "bio": "Mira chịu trách nhiệm sáng tác bài hát cho nhóm. Tính cách điềm tĩnh, sâu sắc và luôn quan tâm cẩn thận đến các thành viên khác.",
+      "social_links": {
+        "twitter": "https://x.com/mira_official",
+        "instagram": "https://instagram.com/mira_official",
+        "youtube": "https://youtube.com/@mira_channel",
+        "note": "https://note.com/mira_official"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"
+      ]
     }
   ],
   "songs": [
