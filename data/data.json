@@ -1,0 +1,44 @@
+{
+  "members": [
+    {
+      "id": "yumemi",
+      "name": "Hoshino Yumemi",
+      "japanese_name": "星野 ゆめみ",
+      "role": "Vocal & Guitar",
+      "color": "#ff75a0",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+      "birthday": "15 tháng 4",
+      "height": "158 cm",
+      "likes": "Món ngọt, Guitar, Viết nhạc",
+      "bio": "Yumemi là trưởng nhóm và là nguồn năng lượng của cả band. Cô sở hữu chất giọng trong trẻo cùng ước mơ truyền tải cảm xúc qua từng giai điệu."
+    },
+    {
+      "id": "mira",
+      "name": "Tsukishima Mira",
+      "japanese_name": "月島 ミラ",
+      "role": "Keyboards & Composer",
+      "color": "#8a70d6",
+      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
+      "birthday": "20 tháng 9",
+      "height": "162 cm",
+      "likes": "Đọc sách, Trà chiều, Piano classical",
+      "bio": "Mira chịu trách nhiệm sáng tác bài hát cho nhóm. Tính cách điềm tĩnh, sâu sắc và luôn quan tâm cẩn thận đến các thành viên khác."
+    }
+  ],
+  "songs": [
+    {
+      "id": "yumemita-story",
+      "title": "Yumemita Story",
+      "japanese_title": "夢みたストーリー",
+      "artist": "Yumemita Project",
+      "translator": "Admin Fanpage",
+      "cover": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
+      "type": "Original Song",
+      "lyrics": {
+        "japanese": "夢を追いかけて どこまでも行くよ\nあの日交わした 約束を胸に\n光る未来へ 手を伸ばそう",
+        "romaji": "Yume wo oikakete dokomade mo iku yo\nAno hi kawashita yakusoku wo mune ni\nHikaru mirai e te wo nobasou",
+        "vietnamese": "Đuổi theo những giấc mơ, chúng mình sẽ đi tới bất cứ đâu\nGiữ trọn lời hứa năm ấy ở trong lòng\nCùng vươn tay hướng về tương lai ngập tràn ánh sáng"
+      }
+    }
+  ]
+}
