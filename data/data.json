@@ -4,13 +4,16 @@
       "id": "yumemi",
       "name": "Hoshino Yumemi",
       "japanese_name": "星野 ゆめみ",
+      "nickname": "Yume-chan / Yume-p",
       "role": "Vocal & Guitar",
       "color": "#ff75a0",
       "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+      "logo": "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
       "birthday": "15 tháng 4",
       "height": "158 cm",
       "likes": "Món ngọt, Guitar, Viết nhạc",
-      "bio": "Yumemi là trưởng nhóm và là nguồn năng lượng của cả band. Cô sở hữu chất giọng trong trẻo cùng ước mơ truyền tải cảm xúc qua từng giai điệu.",
+      "bio": "Trưởng nhóm kiêm giọng hát chính với năng lượng tích cực luôn lan tỏa đến mọi người вокруг!",
+      "background_info": "Yumemi sinh ra trong một gia đình có truyền thống âm nhạc tại Tokyo. Cô bắt đầu tiếp xúc với đàn Guitar từ năm 10 tuổi sau khi xem một chương trình biểu diễn live trên tivi. Yumemi là người khởi xướng và kết nối cả 5 thành viên lại để thành lập nên nhóm Yumemita.\n\nTính cách năng động, hơi vụng về một chút nhưng luôn là chỗ dựa tinh thần lớn nhất cho toàn đội mỗi khi đứng trên sân khấu.",
       "social_links": {
         "twitter": "https://x.com/yumemi_official",
         "instagram": "https://instagram.com/yumemi_official",
@@ -20,21 +23,23 @@
       "gallery": [
         "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80"
+        "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80"
       ]
     },
     {
       "id": "mira",
       "name": "Tsukishima Mira",
       "japanese_name": "月島 ミラ",
+      "nickname": "Mirarin / Mii",
       "role": "Keyboards & Composer",
       "color": "#8a70d6",
       "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
+      "logo": "https://cdn-icons-png.flaticon.com/512/3208/3208728.png",
       "birthday": "20 tháng 9",
       "height": "162 cm",
       "likes": "Đọc sách, Trà chiều, Piano classical",
-      "bio": "Mira chịu trách nhiệm sáng tác bài hát cho nhóm. Tính cách điềm tĩnh, sâu sắc và luôn quan tâm cẩn thận đến các thành viên khác.",
+      "bio": "Nhà sáng tác tài năng của nhóm, tính cách điềm tĩnh và vô cùng sâu sắc.",
+      "background_info": "Mira học Piano cổ điển từ nhỏ và từng đoạt nhiều giải thưởng tài năng trẻ. Trước khi tham gia Yumemita, cô từng khá khép kín và chỉ thích tự phối nhạc một mình trong phòng.\n\nNhờ sự kiên trì của Yumemi, Mira đã đồng ý gia nhập band và trở thành linh hồn trong giai điệu của các ca khúc nhóm.",
       "social_links": {
         "twitter": "https://x.com/mira_official",
         "instagram": "https://instagram.com/mira_official",
@@ -43,8 +48,74 @@
       },
       "gallery": [
         "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"
+        "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "karen",
+      "name": "Hanasaki Karen",
+      "japanese_name": "花咲 カレン",
+      "nickname": "Ren-ren / Karen-chi",
+      "role": "Bass & Visual",
+      "color": "#4ecdc4",
+      "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+      "logo": "https://cdn-icons-png.flaticon.com/512/3468/3468377.png",
+      "birthday": "3 tháng 6",
+      "height": "165 cm",
+      "likes": "Thời trang, Chụp ảnh, Thú cưng",
+      "bio": "Cây bass cá tính với phong cách thời trang nổi bật và nụ cười rạng rỡ.",
+      "background_info": "Karen vốn là một người mẫu ảnh tuổi teen khá có tiếng trước khi bước chân vào lĩnh vực âm nhạc. Cô đam mê tiếng đàn Bass trầm ấm và tự học qua mạng trước khi gặp gỡ nhóm.\n\nKaren đảm nhận vai trò định hình phong cách trang phục và visual cho các buổi biểu diễn live của nhóm.",
+      "social_links": {
+        "twitter": "https://x.com/karen_official",
+        "instagram": "https://instagram.com/karen_official"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "rin",
+      "name": "Tachibana Rin",
+      "japanese_name": "橘 凛",
+      "nickname": "Rin-chan / Tama",
+      "role": "Drums",
+      "color": "#ff9f43",
+      "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80",
+      "logo": "https://cdn-icons-png.flaticon.com/512/860/860330.png",
+      "birthday": "11 tháng 11",
+      "height": "155 cm",
+      "likes": "Thể thao, Ramen, Tập Drums",
+      "bio": "Tay trống tràn đầy nhiệt huyết, giữ nhịp đập năng lượng cho toàn bộ band nhạc!",
+      "background_info": "Rin từng là thành viên câu lạc bộ điền kinh trước khi chuyển sang chơi trống. Sức bền và phản xạ tuyệt vời giúp cô có kỹ thuật đánh trống mạnh mẽ và cực kỳ chính xác.\n\nBên ngoài giờ tập, Rin là cô gái tinh nghịch, thích ăn ramen cùng bạn bè và luôn bày trò đùa để khuấy động không khí.",
+      "social_links": {
+        "twitter": "https://x.com/rin_official",
+        "youtube": "https://youtube.com/@rin_drum"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "mei",
+      "name": "Saotome Mei",
+      "japanese_name": "早乙女 めい",
+      "nickname": "Mei-mei / Little Guitar",
+      "role": "Lead Guitar",
+      "color": "#54a0ff",
+      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
+      "logo": "https://cdn-icons-png.flaticon.com/512/2907/2907253.png",
+      "birthday": "25 tháng 12",
+      "height": "152 cm",
+      "likes": "Game, Mèo, Solo Guitar Riff",
+      "bio": "Thiên tài Lead Guitar nhỏ tuổi nhất nhưng có kỹ thuật solo siêu đẳng.",
+      "background_info": "Mei là em út của nhóm, dù nhỏ tuổi nhưng kỹ năng chơi Electric Guitar của cô khiến bất kỳ ai cũng phải ngả nón. Mei dành hàng giờ mỗi ngày trong phòng để luyện các bản Riff độ khó cao.\n\nTính cách hơi nhút nhát khi nói chuyện giao tiếp thông thường, nhưng một khi đã cầm đàn trên tay thì Mei trở thành một con người hoàn toàn khác bùng nổ sức mạnh.",
+      "social_links": {
+        "twitter": "https://x.com/mei_official",
+        "note": "https://note.com/mei_guitar"
+      },
+      "gallery": [
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
       ]
     }
   ],
