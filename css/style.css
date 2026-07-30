@@ -92,11 +92,12 @@ p{ margin: 0 0 1em; }
 }
 
 /* ---------- Navigation ---------- */
-.nav{
+.nav {
   position: sticky; top:0; z-index: 50;
   backdrop-filter: blur(16px) saturate(160%);
-  background: rgba(15, 12, 28, 0.85);
-  border-bottom: 1px solid var(--border);
+  background: rgba(15, 12, 28, 0.88);
+  border-bottom: 3px solid #FF7788; /* Thanh màu #FF7788 */
+  box-shadow: 0 4px 15px rgba(255, 119, 136, 0.2);
 }
 .nav__inner{
   max-width: var(--max-w); margin:0 auto; padding: 1rem var(--space-3);
@@ -516,3 +517,54 @@ p{ margin: 0 0 1em; }
 }
 .btn:hover { border-color: var(--nonoka); background: var(--nonoka); color:#ffffff; transform:translateY(-2px); }
 .empty-state { text-align:center; padding: var(--space-5) 0; color: var(--text-muted); }
+
+/* ============================================================
+   CẬP NHẬT MÀU SẮC & LOGO YUMEMITA (#FF7788 & #2288DD)
+   ============================================================ */
+
+/* 1. Viền dưới thanh Navigation đổi thành màu hồng #FF7788 */
+.nav {
+  position: sticky; top:0; z-index: 50;
+  backdrop-filter: blur(16px) saturate(160%);
+  background: rgba(15, 12, 28, 0.88);
+  border-bottom: 3px solid #FF7788; /* Thanh màu #FF7788 */
+  box-shadow: 0 4px 15px rgba(255, 119, 136, 0.2);
+}
+
+/* Kích thước Logo hình ảnh ở thanh Nav */
+.nav__logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 2. Thanh gạch chân khi Di chuột vào / Trang chủ active đổi thành màu xanh #2288DD */
+.nav__links a:hover, 
+.nav__links a.is-active {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(34, 136, 221, 0.6);
+}
+
+.nav__links a:hover::after,
+.nav__links a.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #2288DD; /* Màu xanh #2288DD */
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(34, 136, 221, 0.8);
+}
+
+/* 3. Thanh gạch ngang phân cách (Hình số 3) đổi thành màu xanh #2288DD */
+.thread-rule {
+  height: 4px;
+  border: 0;
+  border-radius: 4px;
+  background: #2288DD; /* Màu xanh #2288DD */
+  margin: 0 0 var(--space-4);
+  box-shadow: 0 0 12px rgba(34, 136, 221, 0.6);
+}
