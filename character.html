@@ -98,16 +98,31 @@
           <div class="bg-white rounded-3xl p-6 md:p-8 border border-pink-100 shadow-md mb-8">
             <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
               
-              <!-- Avatar -->
-              <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-md flex-shrink-0 border-4 border-white" style="background-color: ${member.color}">
-                <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover">
+              <!-- Avatar with Logo badge -->
+              <div class="relative flex-shrink-0">
+                <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-md border-4 border-white" style="background-color: ${member.color}">
+                  <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover">
+                </div>
+                ${member.logo ? `
+                  <div class="absolute -bottom-3 -right-3 w-16 h-16 bg-white rounded-2xl p-2 shadow-lg border border-slate-100 flex items-center justify-center" title="Personal Logo">
+                    <img src="${member.logo}" alt="Logo" class="max-w-full max-h-full object-contain">
+                  </div>
+                ` : ''}
               </div>
 
               <!-- Main Info -->
               <div class="flex-grow text-center md:text-left">
-                <div class="inline-block px-3 py-1 rounded-full text-xs font-bold text-white mb-2" style="background-color: ${member.color}">
-                  ${member.role}
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-2">
+                  <span class="px-3 py-1 rounded-full text-xs font-bold text-white shadow-sm" style="background-color: ${member.color}">
+                    ${member.role}
+                  </span>
+                  ${member.nickname ? `
+                    <span class="px-3 py-1 rounded-full text-xs font-bold text-slate-600 bg-slate-100 border border-slate-200">
+                      🏷️ ${member.nickname}
+                    </span>
+                  ` : ''}
                 </div>
+
                 <h1 class="brand-font text-3xl md:text-4xl font-extrabold text-slate-800 mb-1">${member.name}</h1>
                 <p class="text-slate-400 font-semibold mb-4 text-base">${member.japanese_name}</p>
 
@@ -119,6 +134,10 @@
                 <!-- Profile Table Grid -->
                 <div class="grid grid-cols-2 gap-3 text-sm bg-slate-50 p-4 rounded-2xl border border-slate-100 text-left">
                   <div>
+                    <span class="text-slate-400 block text-xs">Biệt danh</span>
+                    <span class="font-bold text-slate-700">${member.nickname || 'Chưa có'}</span>
+                  </div>
+                  <div>
                     <span class="text-slate-400 block text-xs">Sinh nhật</span>
                     <span class="font-bold text-slate-700">${member.birthday}</span>
                   </div>
@@ -126,7 +145,7 @@
                     <span class="text-slate-400 block text-xs">Chiều cao</span>
                     <span class="font-bold text-slate-700">${member.height}</span>
                   </div>
-                  <div class="col-span-2">
+                  <div>
                     <span class="text-slate-400 block text-xs">Sở thích</span>
                     <span class="font-bold text-slate-700">${member.likes}</span>
                   </div>
@@ -136,12 +155,20 @@
             </div>
           </div>
 
-          <!-- Story / Bio Section -->
+          <!-- Short Bio Section -->
           <div class="bg-white rounded-3xl p-6 md:p-8 border border-pink-100 shadow-sm mb-8">
-            <h2 class="brand-font text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-              <span class="w-2.5 h-6 rounded-full inline-block" style="background-color: ${member.color}"></span> Giới Thiệu
+            <h2 class="brand-font text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
+              <span class="w-2.5 h-6 rounded-full inline-block" style="background-color: ${member.color}"></span> Giới Thiệu Ngắn
             </h2>
             <p class="text-slate-600 leading-relaxed text-base">${member.bio}</p>
+          </div>
+
+          <!-- Background Information Section -->
+          <div class="bg-white rounded-3xl p-6 md:p-8 border border-pink-100 shadow-sm mb-8">
+            <h2 class="brand-font text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+              <span class="w-2.5 h-6 rounded-full inline-block" style="background-color: ${member.color}"></span> Background Information & Câu Chuyện
+            </h2>
+            <p class="text-slate-600 leading-relaxed text-base whitespace-pre-line">${member.background_info || 'Đang cập nhật thêm thông tin nền...'}</p>
           </div>
 
           <!-- Image Gallery Section -->

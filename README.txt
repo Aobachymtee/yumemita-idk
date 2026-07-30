@@ -1,27 +1,32 @@
-=== CẬP NHẬT PHIÊN BẢN V2: GALLERY & SOCIAL LINKS ===
+=== CẬP NHẬT PHIÊN BẢN V3: FULL 5 MEMBERS + LOGO + BACKGROUND INFO & NICKNAME ===
 
-Phiên bản này bổ sung 2 tính năng bồ yêu cầu:
-1. Thư viện ảnh (Gallery) cho từng gái (có tính năng click vào xem ảnh phóng to full màn hình).
-2. Nút liên kết MXH chính thức (Twitter/X, Instagram, YouTube, Note) sinh động.
+Phiên bản này nâng cấp theo đúng yêu cầu mới của bồ:
+1. Đã tạo sẵn khung dữ liệu chuẩn cho CẢ 5 THÀNH VIÊN nhóm Yumemita.
+2. Thêm huy hiệu Logo riêng của từng gái (hiển thị góc dưới avatar ở cả trang chủ lẫn trang chi tiết).
+3. Thêm trường Nickname (Biệt danh) hiển thị nổi bật.
+4. Thêm phần "Background Information & Câu Chuyện" riêng biệt để bồ tha hồ viết tiểu sử/lịch sử sâu hơn về từng gái.
 
-CÁCH ĐỔI/THÊM LINK MXH VÀ ẢNH CHO GÁI TRONG `data/data.json`:
-Mở file `data/data.json`, trong phần thông tin nhân vật bồ sẽ thấy:
+CÁCH ĐỔI DỮ LIỆU CỦA 5 GÁI TRONG `data/data.json`:
+Bồ mở file `data/data.json` ra, mỗi thành viên sẽ có cấu trúc như sau:
 
-"social_links": {
-  "twitter": "https://x.com/...",
-  "instagram": "https://instagram.com/...",
-  "youtube": "https://youtube.com/...",
-  "note": "https://note.com/..."
-},
-"gallery": [
-  "link_anh_1.jpg",
-  "link_anh_2.jpg",
-  "link_anh_3.jpg"
-]
+{
+  "id": "yumemi",
+  "name": "Hoshino Yumemi",
+  "japanese_name": "星野 ゆめみ",
+  "nickname": "Yume-chan / Yume-p",
+  "role": "Vocal & Guitar",
+  "color": "#ff75a0",
+  "image": "assets/yumemi_avatar.jpg",
+  "logo": "assets/yumemi_logo.png",
+  "birthday": "15 tháng 4",
+  "height": "158 cm",
+  "likes": "Món ngọt, Guitar...",
+  "bio": "Mô tả ngắn gọn...",
+  "background_info": "Viết toàn bộ tiểu sử, hoàn cảnh xuất thân, lịch sử gia nhập nhóm ở đây...",
+  "social_links": { ... },
+  "gallery": [ ... ]
+}
 
-Bồ chỉ cần dán link ảnh/link MXH tương ứng vào là xong!
-
-CÁCH UP CẢ ẢNH CỤ THỂ VÀO REPO GITHUB (NẾU KHÔNG DÙNG LINK ẢNH ONLINE):
-- Bồ có thể tạo 1 folder tên `assets/` trong repo.
-- Bỏ các file ảnh vào folder đó (vd: `assets/yumemi_1.jpg`).
-- Trong file `data.json`, điền đường dẫn ảnh là: `"gallery": ["assets/yumemi_1.jpg"]`.
+LƯU Ý VỀ LOGO & CẤU TRÚC FOLDER:
+- Bồ có thể gom hết ảnh logo vào thư mục `assets/` (ví dụ: `assets/logo_yumemi.png`).
+- Trong file `data.json`, điền đường dẫn ảnh logo là: `"logo": "assets/logo_yumemi.png"`.
