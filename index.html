@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUME∞MITA — Trang fan Mugendai MewType</title>
+<meta name="description" content="Trang fan tiếng Việt về Mugendai MewType (Yumemita) — BanG Dream!: thông tin thành viên, bài hát và bản dịch lời.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="index.html">YUME<span class="inf">∞</span>MITA</a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="is-active">Trang chủ</a></li>
+      <li><a href="members/index.html">Thành viên</a></li>
+      <li><a href="songs/index.html">Bài hát</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <p class="eyebrow">Mugendai MewType — BanG Dream!</p>
+    <h1 class="hero__word">YUME<span class="inf">∞</span>MITA</h1>
+    <p class="hero__tagline">Trang fanmade tiếng Việt: thông tin 5 thành viên, danh sách bài hát và bản dịch lời — dịch bởi fan, cho fan.</p>
+    <div class="hero__stats">
+      <div class="hero__stat"><b>5</b><span>Thành viên</span></div>
+      <div class="hero__stat"><b>2023</b><span>Ra mắt</span></div>
+      <div class="hero__stat"><b>2026</b><span>Anime lên sóng</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section">
+    <hr class="thread-rule">
+    <h2>Mugendai MewType là ai?</h2>
+    <p class="text-muted" style="max-width:65ch">
+      Mugendai MewType — fan hay gọi tắt là <strong>Yumemita</strong> — là một ban nhạc ảo 5 thành viên
+      trong vũ trụ BanG Dream!, ra mắt cuối năm 2023. Concept ban đầu là "BanG Dream! nhưng không biết
+      chơi nhạc cũng được" — cả 5 bạn gần như học chơi nhạc cụ từ con số 0 trước khi debut. Mùa hè 2026,
+      câu chuyện của nhóm chính thức lên sóng anime riêng: <em>BanG Dream! Yume∞Mita</em>.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section__head">
+      <h2>Thành viên</h2>
+    </div>
+    <div class="grid" id="home-members"></div>
+  </section>
+
+  <section class="section">
+    <div class="section__head">
+      <h2>Bài hát</h2>
+      <a href="songs/index.html">Xem tất cả bài hát →</a>
+    </div>
+    <div class="grid" id="home-songs"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Trang fanmade, không thuộc/không đại diện cho Bushiroad, Craft Egg hay BanG Dream! Project.
+    Toàn bộ nhân vật &amp; bài hát thuộc về tác giả gốc — nội dung tại đây chỉ mang tính giới thiệu &amp; dịch thuật phi lợi nhuận.</p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  renderMemberGrid("home-members", "members/");
+  renderSongGrid("home-songs", "songs/", 3);
+</script>
+</body>
+</html>
