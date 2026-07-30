@@ -1,63 +1,15 @@
-# YUME∞MITA — Trang fan Mugendai MewType
+=== YUME∞MITA FANMADE WEBSITE (VERSION 4) ===
 
-Trang tĩnh (HTML/CSS/JS thuần), không cần build, đẩy thẳng lên GitHub Pages là chạy.
+ĐÃ CẬP NHẬT CÁC THAY ĐỔI THEO YÊU CẦU CỦA BỒ:
+1. Nền Website Hình Ảnh dìm tối: Thay vì đen thui, nền nay sử dụng hình ảnh được phủ lớp màu tối mờ mộng mơ. Bồ có thể đổi ảnh nền bằng cách sửa link `siteInfo.bgImage` trong `js/data.js` hoặc thay file `images/bg.jpg`.
+2. Thay Logo/Ảnh ở Hero & Xóa năm: Đã xóa 2 con số năm (2023, 2026). Đã thêm ô hiển thị Logo/Banner ở Hero section.
+3. Chỉnh Description theo ý thích: Bồ sửa biến `siteInfo.heroTagline` trong `js/data.js` là dòng chữ giới thiệu trang chủ tự động đổi theo!
+4. Logo riêng cho từng gái: Thêm logo badge ở cả thẻ nhân vật ngoài trang chủ và trên trang chi tiết nhân vật.
+5. Bảng thông tin chi tiết (Wiki Information Table): Đã dựng đúng chuẩn thiết kế bảng thông tin 2 cột giống hệt ảnh bồ gửi (có Kanji, Romaji, Pronoun, Appellation, Image Color, Animal, Fan Name, Fan Mark, Position, Instrument, Age, Birthday, Height, Likes, Dislikes, Socials, Tags, Stream Hours...).
 
-## CÁC TÍNH NĂNG MỚI ĐÃ ĐƯỢC CHỈNH SỬA:
-1. **Giao diện rực rỡ chuẩn chất Yumemita / BanG Dream!**:
-   - Tông màu chuyển sắc phát sáng (glow gradient), các thẻ bo tròn mềm mại (`18px`).
-   - Hiệu ứng đổ bóng theo màu chủ đạo (accent color) của từng thành viên khi di chuột vào.
-2. **Hỗ trợ Ảnh Avatar & Thư viện ảnh (Gallery)**:
-   - Thêm ảnh đại diện thật cho các gái qua field `avatar` trong `js/data.js`.
-   - Thêm Bộ sưu tập ảnh (Gallery) qua mảng `gallery: [...]` trong `js/data.js`.
-   - Tích hợp sẵn tính năng **Lightbox (xem ảnh phóng to full màn hình)** khi bấm vào từng ảnh gallery.
-3. **Nút liên kết MXH chính thức (Social Media Buttons)**:
-   - Thêm nút liên kết đến X (Twitter), Instagram, YouTube, TikTok, Note với màu sắc chuẩn thương hiệu và icon sinh động.
-
-## Cấu trúc thư mục
-
-```
-yumemita-site/
-├── index.html            trang chủ
-├── members/
-│   ├── index.html        danh sách 5 thành viên
-│   └── detail.html       trang chi tiết — DÙNG CHUNG cho cả 5 người qua ?id=arale, ?id=nonoka...
-├── songs/
-│   ├── index.html        danh sách bài hát
-│   └── detail.html       trang lời + bản dịch — DÙNG CHUNG qua ?id=...
-├── css/style.css         toàn bộ style rực rỡ của trang
-├── js/data.js            ⭐ TOÀN BỘ DỮ LIỆU — sửa file này để đổi ảnh, link mxh, thông tin!
-├── js/main.js            logic hiển thị + Lightbox xem ảnh
-└── images/members/       thư mục để cất ảnh của gái (nếu dùng ảnh local)
-```
-
-## Cách thêm / sửa Ảnh & Link MXH trong `js/data.js`
-
-Mở file `js/data.js`, mỗi thành viên có cấu trúc dữ liệu cực kỳ dễ hiểu:
-
-```javascript
-{
-  id: "arale",
-  name: "Nakamachi Arale",
-  nickname: "Arale-chan",
-  ...
-  avatar: "https://link-anh-avatar.jpg", // Hoặc "images/members/arale.jpg"
-  socialLinks: {
-    twitter: "https://x.com/...",
-    instagram: "https://instagram.com/...",
-    youtube: "https://youtube.com/...",
-    tiktok: "https://tiktok.com/@...",
-    note: "https://note.com/..."
-  },
-  gallery: [
-    "https://link-anh-1.jpg",
-    "https://link-anh-2.jpg",
-    "images/members/arale_live.jpg"
-  ]
-}
-```
-
-## Đưa lên GitHub Pages
-
-1. Upload toàn bộ các file/folder bên trong thư mục này lên repository GitHub của bồ.
-2. Vào **Settings → Pages** -> Chọn branch `main`, chọn folder `/(root)` -> **Save**.
-3. Chờ 1-2 phút là trang web sẽ chạy online!
+CÁCH THÊM/SỬA THÔNG TIN TRONG `js/data.js`:
+Mở duy nhất file `js/data.js` ra:
+- Muốn chỉnh Tagline/Description trang chủ: Sửa `siteInfo.heroTagline`.
+- Muốn đổi Logo Hero: Sửa `siteInfo.heroLogoImage`.
+- Muốn sửa Bảng thông tin gái: Sửa trong mảng `infoTable` của từng gái.
+- Muốn đổi Logo của gái: Sửa `logo` ("https://..." hoặc "images/logo_x.png").

@@ -27,13 +27,14 @@
 <header class="hero">
   <div class="container">
     <p class="eyebrow">Mugendai MewType — BanG Dream!</p>
+    
+    <!-- Khung Logo/Ảnh đại diện Hero -->
+    <div id="hero-logo-slot"></div>
+    
     <h1 class="hero__word">YUME<span class="inf">∞</span>MITA</h1>
-    <p class="hero__tagline">Trang fanmade tiếng Việt: thông tin 5 thành viên, danh sách bài hát và bản dịch lời — dịch bởi fan, cho fan.</p>
-    <div class="hero__stats">
-      <div class="hero__stat"><b>5</b><span>Thành viên</span></div>
-      <div class="hero__stat"><b>2023</b><span>Ra mắt</span></div>
-      <div class="hero__stat"><b>2026</b><span>Anime lên sóng</span></div>
-    </div>
+    
+    <!-- Description / Tagline tùy chỉnh -->
+    <p class="hero__tagline" id="hero-tagline-text">Trang fanmade tiếng Việt: thông tin 5 thành viên, danh sách bài hát và bản dịch lời — dịch bởi fan, cho fan.</p>
   </div>
 </header>
 
@@ -45,14 +46,14 @@
     <p class="text-muted" style="max-width:65ch">
       Mugendai MewType — fan hay gọi tắt là <strong>Yumemita</strong> — là một ban nhạc ảo 5 thành viên
       trong vũ trụ BanG Dream!, ra mắt cuối năm 2023. Concept ban đầu là "BanG Dream! nhưng không biết
-      chơi nhạc cũng được" — cả 5 bạn gần như học chơi nhạc cụ từ con số 0 trước khi debut. Mùa hè 2026,
-      câu chuyện của nhóm chính thức lên sóng anime riêng: <em>BanG Dream! Yume∞Mita</em>.
+      chơi nhạc cũng được" — cả 5 bạn gần như học chơi nhạc cụ từ con số 0 trước khi debut.
     </p>
   </section>
 
   <section class="section">
     <div class="section__head">
       <h2>Thành viên</h2>
+      <a href="members/index.html">Xem tất cả 5 thành viên →</a>
     </div>
     <div class="grid" id="home-members"></div>
   </section>
@@ -77,6 +78,15 @@
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script>
+  if (typeof siteInfo !== 'undefined') {
+    if (siteInfo.heroLogoImage) {
+      document.getElementById('hero-logo-slot').innerHTML = `<div class="hero__banner-wrap"><img src="${siteInfo.heroLogoImage}" alt="Yumemita Logo" class="hero__banner-img"></div>`;
+    }
+    if (siteInfo.heroTagline) {
+      document.getElementById('hero-tagline-text').innerText = siteInfo.heroTagline;
+    }
+  }
+
   renderMemberGrid("home-members", "members/");
   renderSongGrid("home-songs", "songs/", 3);
 </script>

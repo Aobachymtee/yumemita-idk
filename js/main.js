@@ -1,6 +1,11 @@
 /* ============================================================
-   main.js — logic HIỂN THỊ dùng chung cho mọi trang.
+   main.js — Logic hiển thị chính của trang web YUMEMITA
    ============================================================ */
+
+// Áp dụng Background Image từ data.js nếu có
+if (typeof siteInfo !== 'undefined' && siteInfo.bgImage) {
+  document.documentElement.style.setProperty('--bg-image', `url('${siteInfo.bgImage}')`);
+}
 
 function getMemberById(id){
   return membersData.find(m => m.id === id);
@@ -10,14 +15,22 @@ function initial(name){
   return name.trim().charAt(0).toUpperCase();
 }
 
+/* ---- Thẻ Thành Viên (Home & Members List) ---- */
 function renderMemberCard(m, hrefPrefix){
   const avatarHtml = m.avatar 
     ? `<div class="member-card__avatar-wrap"><img src="${m.avatar}" alt="${m.name}" class="member-card__img"></div>`
     : `<div class="member-card__avatar">${initial(m.shortName)}</div>`;
 
+  const logoHtml = m.logo
+    ? `<div class="member-card__logo-wrap" title="Logo của ${m.name}"><img src="${m.logo}" alt="Logo" class="member-card__logo-img"></div>`
+    : '';
+
   return `
     <a class="member-card" style="--accent:${m.color}" href="${hrefPrefix}detail.html?id=${m.id}">
-      ${avatarHtml}
+      <div class="member-card__top">
+        ${avatarHtml}
+        ${logoHtml}
+      </div>
       <div class="member-card__content">
         <div class="member-card__badge-row">
           <span class="eyebrow member-card__role">${m.roleTag}</span>
@@ -37,6 +50,47 @@ function renderMemberGrid(containerId, hrefPrefix, limit){
   el.innerHTML = list.map(m => renderMemberCard(m, hrefPrefix)).join("");
 }
 
+/* ---- Bảng Thông Tin Chi Tiết WIKI (như ảnh bồ gửi) ---- */
+function renderWikiInfoTable(infoTable, memberColor) {
+  if (!infoTable || Object.keys(infoTable).length === 0) return '';
+
+  let rowsHtml = '';
+  for (const [key, value] of Object.entries(infoTable)) {
+    let formattedVal = '';
+    
+    if (Array.isArray(value)) {
+      formattedVal = value.map(tag => `<span class="info-wiki-tag">${tag}</span>`).join(' ');
+    } else if (key === "Image Color" && memberColor) {
+      formattedVal = `<span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:${memberColor}; margin-right:6px; vertical-align:middle;"></span><strong>${value}</strong>`;
+    } else {
+      formattedVal = value;
+    }
+
+    rowsHtml += `
+      <tr>
+        <td class="info-wiki-label">${key}</td>
+        <td class="info-wiki-value">${formattedVal}</td>
+      </tr>
+    `;
+  }
+
+  return `
+    <div class="info-wiki-container">
+      <table class="info-wiki-table">
+        <thead>
+          <tr>
+            <th colspan="2" class="info-wiki-header">Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rowsHtml}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+/* ---- Trang Chi Tiết Thành Viên ---- */
 function renderMemberDetail(containerId){
   const el = document.getElementById(containerId);
   if(!el) return;
@@ -54,6 +108,7 @@ function renderMemberDetail(containerId){
 
   document.title = `${m.name} — YUME∞MITA`;
 
+  // Render Social Links
   const links = m.socialLinks || {};
   let socialHtml = '';
   if (links.twitter) {
@@ -72,6 +127,7 @@ function renderMemberDetail(containerId){
     socialHtml += `<a href="${links.note}" target="_blank" class="social-btn social-btn--note"><i class="fa-solid fa-note-sticky"></i> Note</a>`;
   }
 
+  // Gallery
   const galleryList = m.gallery || [];
   let galleryHtml = '';
   if (galleryList.length > 0) {
@@ -96,6 +152,12 @@ function renderMemberDetail(containerId){
     ? `<div class="member-hero__avatar-wrap"><img src="${m.avatar}" alt="${m.name}" class="member-hero__img"></div>`
     : `<div class="member-hero__avatar">${initial(m.shortName)}</div>`;
 
+  const logoBadge = m.logo
+    ? `<div class="member-hero__logo-box" title="Logo riêng của ${m.name}"><img src="${m.logo}" alt="Logo"></div>`
+    : '';
+
+  const wikiTableHtml = renderWikiInfoTable(m.infoTable, m.colorHex || m.color);
+
   const creditsHtml = (m.credits && m.credits.length)
     ? `<section class="detail-section">
          <h3><span class="section-dot" style="background:${m.color}"></span> Đóng góp sáng tác</h3>
@@ -106,6 +168,7 @@ function renderMemberDetail(containerId){
   el.innerHTML = `
     <div class="member-hero" style="--accent:${m.color}">
       ${avatarHtml}
+      ${logoBadge}
       <div class="member-hero__info">
         <div class="hero-badges">
           <span class="eyebrow member-role-tag">${m.roleTag}</span>
@@ -118,13 +181,8 @@ function renderMemberDetail(containerId){
       </div>
     </div>
 
-    <div class="stat-panel">
-      <div class="stat-panel__item"><p class="eyebrow">Sinh nhật</p><strong>${m.birthday}</strong></div>
-      <div class="stat-panel__item"><p class="eyebrow">Cung hoàng đạo</p><strong>${m.zodiac}</strong></div>
-      <div class="stat-panel__item"><p class="eyebrow">Chiều cao</p><strong>${m.height}</strong></div>
-      <div class="stat-panel__item"><p class="eyebrow">Trường</p><strong>${m.school}</strong></div>
-      <div class="stat-panel__item"><p class="eyebrow">Sở thích</p><strong>${m.likes}</strong></div>
-    </div>
+    <!-- Bảng thông tin Wiki kiểu mới -->
+    ${wikiTableHtml}
 
     <section class="detail-section">
       <h3><span class="section-dot" style="background:${m.color}"></span> Giới thiệu</h3>
@@ -137,6 +195,7 @@ function renderMemberDetail(containerId){
   `;
 }
 
+/* ---- Lightbox Modal ---- */
 function initLightbox(){
   if(!document.getElementById('lightbox-modal')){
     const modal = document.createElement('div');
@@ -164,6 +223,7 @@ function closeLightbox(){
   if(modal) modal.classList.remove('is-open');
 }
 
+/* ---- Thẻ Bài Hát ---- */
 function renderSongCard(s, hrefPrefix){
   const dots = s.credits.map(id => {
     const m = getMemberById(id);
@@ -185,6 +245,7 @@ function renderSongGrid(containerId, hrefPrefix, limit){
   el.innerHTML = list.map(s => renderSongCard(s, hrefPrefix)).join("");
 }
 
+/* ---- Trang Chi Tiết Bài Hát ---- */
 function renderSongDetail(containerId){
   const el = document.getElementById(containerId);
   if(!el) return;
