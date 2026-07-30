@@ -3,9 +3,9 @@
    ============================================================ */
 
 const siteInfo = {
-  "bgImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
-  "heroLogoImage": "https://cdn-icons-png.flaticon.com/512/3208/3208728.png",
-  "heroTagline": "Trang fanmade tiếng Việt dành riêng cho Mugendai MewType (Yumemita) — Nơi cập nhật thông tin 5 thành viên, hình ảnh & thư viện bản dịch lời bài hát!"
+  "bgImage": "https://anime.bang-dream.com/yumemita/wordpress/wp-content/uploads/2026/07/24115712/YMMT_MACHIUKE_06_PC.png",
+  "heroLogoImage": "https://anime.bang-dream.com/yumemita/wordpress/wp-content/themes/yumemita_v2/assets/images/img_logo-sub.webp",
+  "heroTagline": "Chào mừng các con vợ đến với trang tổng hợp tất tần tật về Yumemita tại Việt Nam. Để biết thêm chi tiết mời mọi người xem qua nhé (´∇`) 💙 🌟"
 };
 
 const membersData = [
