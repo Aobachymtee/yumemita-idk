@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài hát — YUME∞MITA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="../index.html">YUME<span class="inf">∞</span>MITA</a>
+    <ul class="nav__links">
+      <li><a href="../index.html">Trang chủ</a></li>
+      <li><a href="../members/index.html">Thành viên</a></li>
+      <li><a href="index.html" class="is-active">Bài hát</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container" style="padding-top:var(--space-4); padding-bottom:var(--space-5)">
+  <p style="margin-bottom:var(--space-3)"><a class="btn" href="index.html">← Tất cả bài hát</a></p>
+  <div id="song-detail"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Trang fanmade, không thuộc/không đại diện cho Bushiroad, Craft Egg hay BanG Dream! Project.
+    Lời bài hát &amp; bản dịch thuộc bản quyền tác giả gốc / người dịch tương ứng.</p>
+  </div>
+</footer>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  renderSongDetail("song-detail");
+</script>
+</body>
+</html>
