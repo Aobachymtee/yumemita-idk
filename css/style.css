@@ -593,3 +593,56 @@ p{ margin: 0 0 1em; }
   box-shadow: 0 10px 28px rgba(34, 136, 221, 0.5);
   color: #ffffff !important;
 }
+
+/* ============================================================
+   LAYOUT 2 CỘT CHO KHUNG GIỚI THIỆU + HÌNH BÉ XINH
+   ============================================================ */
+.intro-card-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-m);
+  padding: 2rem 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.intro-card-text {
+  flex: 1;
+}
+
+.intro-card-img-wrap {
+  width: 170px; /* Độ rộng của tấm hình bé xinh */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-card-img {
+  width: 100%;
+  height: auto;
+  max-height: 170px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(255, 119, 136, 0.3));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hiệu ứng nhún nhẹ khi di chuột vào hình */
+.intro-card-img:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* Responsive cho điện thoại (Tự xếp hình lên trên hoặc xuống dưới) */
+@media (max-width: 680px) {
+  .intro-card-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .intro-card-img-wrap {
+    width: 130px;
+  }
+}
