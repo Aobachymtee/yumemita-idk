@@ -85,14 +85,19 @@
 <script src="js/main.js"></script>
 <script>
   if (typeof siteInfo !== 'undefined') {
-    if (siteInfo.heroLogoImage) {
-      document.getElementById('hero-logo-slot').innerHTML = `<div class="hero__banner-wrap"><img src="${siteInfo.heroLogoImage}" alt="Yumemita Logo" class="hero__banner-img"></div>`;
+    // Cập nhật logo Hero an toàn không sợ crash
+    const heroLogoEl = document.getElementById('heroLogo');
+    if (heroLogoEl && siteInfo.heroLogoImage) {
+      heroLogoEl.src = siteInfo.heroLogoImage;
     }
-    if (siteInfo.heroTagline) {
+    
+    // Cập nhật Tagline
+    if (siteInfo.heroTagline && document.getElementById('hero-tagline-text')) {
       document.getElementById('hero-tagline-text').innerText = siteInfo.heroTagline;
     }
   }
 
+  // Gọi render danh sách thành viên & bài hát
   renderMemberGrid("home-members", "members/");
   renderSongGrid("home-songs", "songs/", 3);
 </script>
