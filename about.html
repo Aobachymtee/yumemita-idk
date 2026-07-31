@@ -9,6 +9,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  /* Bố cục 2 cột cho trang About */
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .about-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Style riêng cho các link & tag trong bảng Info */
+  .info-wiki-table a {
+    text-decoration: underline;
+    transition: opacity 0.2s;
+  }
+  .info-wiki-table a:hover {
+    opacity: 0.8;
+  }
+  .band-color-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #fff;
+  }
+</style>
 </head>
 <body>
 
@@ -32,34 +63,154 @@
   <h1>Tất tần tật về Yumemita</h1>
   <hr class="thread-rule">
 
-  <!-- Khung chi tiết 1: Lịch sử thành lập -->
-  <section class="detail-section">
-    <h3><span class="section-dot" style="background: #FF7788;"></span> Lịch sử ra mắt & Ý nghĩa tên gọi</h3>
-    <p class="bio-text">
-      <strong>Mugendai MewType (夢限大みゅーたいぷ)</strong> được công bố chính thức vào tháng 11/2023[cite: 5]. Tên gọi của nhóm là sự kết hợp chơi chữ đầy sáng tạo giữa <em>"Mugendai" (夢限大 - Vô hạn ước mơ)</em> và <em>"MewType" (Kiểu người âm nhạc thế hệ mới)</em>.
-    </p>
-  </section>
+  <div class="about-layout">
+    
+    <!-- CỘT TRÁI: NỘI DUNG BÀI VIẾT GIỚI THIỆU -->
+    <div class="about-main-content">
+      
+      <section class="detail-section">
+        <h3><span class="section-dot" style="background: #FF7788;"></span> Lịch sử ra mắt & Ý nghĩa tên gọi</h3>
+        <p class="bio-text">
+          <strong>Mugendai MewType (夢限大みゅーたいぷ)</strong> được công bố chính thức vào tháng 11/2023. Tên gọi của nhóm là sự kết hợp chơi chữ đầy sáng tạo giữa <em>"Mugendai" (夢限大 - Vô hạn ước mơ)</em> và <em>"MewType" (Kiểu người âm nhạc thế hệ mới)</em>.
+        </p>
+      </section>
 
-  <!-- Khung chi tiết 2: Phong cách hoạt động -->
-  <section class="detail-section">
-    <h3><span class="section-dot" style="background: #2288DD;"></span> Phong cách âm nhạc & Hoạt động VTuber</h3>
-    <p class="bio-text">
-      Khác với các ban nhạc truyền thống trong BanG Dream!, Yumemita hoạt động theo mô hình lai (Hybrid): vừa ra mắt bài hát/MV chính thức, vừa duy trì kênh VTuber tương tác daily[cite: 5]. Âm nhạc của nhóm mang màu sắc tươi sáng, năng động nhưng không kém phần cảm xúc và cá tính[cite: 11].
-    </p>
-  </section>
+      <section class="detail-section">
+        <h3><span class="section-dot" style="background: #2288DD;"></span> Phong cách âm nhạc & Hoạt động VTuber</h3>
+        <p class="bio-text">
+          Khác với các ban nhạc truyền thống trong BanG Dream!, Yumemita hoạt động theo mô hình lai (Hybrid): vừa ra mắt bài hát/MV chính thức, vừa duy trì kênh VTuber tương tác daily. Âm nhạc của nhóm mang màu sắc tươi sáng, năng động nhưng không kém phần cảm xúc và cá tính.
+        </p>
+      </section>
 
-  <!-- Khung chi tiết 3: Tuyên ngôn Fansite -->
-  <section class="detail-section">
-    <h3><span class="section-dot" style="background: var(--nonoka);"></span> Về Project Fansite Việt Nam</h3>
-    <p class="bio-text">
-      Trang web này được xây dựng bởi cộng đồng fan Yumemita tại Việt Nam nhằm mục đích tổng hợp profile, dịch thuật lyric bài hát và cập nhật thông tin mới nhất đến với các con vợ yêu mến 5 em gái!
-    </p>
-  </section>
+      <section class="detail-section">
+        <h3><span class="section-dot" style="background: var(--nonoka);"></span> Về Project Fansite Việt Nam</h3>
+        <p class="bio-text">
+          Trang web này được xây dựng bởi cộng đồng fan Yumemita tại Việt Nam nhằm mục đích tổng hợp profile, dịch thuật lyric bài hát và cập nhật thông tin mới nhất đến với các con vợ yêu mến 5 em gái!
+        </p>
+      </section>
+
+    </div>
+
+    <!-- CỘT PHẢI: BẢNG WIKI INFORMATION TỰA NHƯ ẢNH BỒ GỬI -->
+    <aside class="about-sidebar">
+      <div class="info-wiki-container">
+        <table class="info-wiki-table" style="text-align: center;">
+          <thead>
+            <tr>
+              <th colspan="2" class="info-wiki-header" style="text-align: center; background: rgba(255, 119, 136, 0.15);">
+                <!-- Logo Band ở đầu bảng -->
+                <img src="https://anime.bang-dream.com/yumemita/wordpress/wp-content/themes/yumemita_v2/assets/images/img_logo-sub.webp" alt="Mugendai MewType Logo" style="max-height: 50px; margin: 0 auto 8px;">
+                <div style="font-size: 1.1rem; color: #fff;">Information</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="info-wiki-label">Kanji</td>
+              <td class="info-wiki-value">夢限大みゅーたいぷ</td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Romaji</td>
+              <td class="info-wiki-value">Mugendai Myūtaipu</td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Abbreviation</td>
+              <td class="info-wiki-value">ゆめみた ('Yumemita')</td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Band Colors</td>
+              <td class="info-wiki-value">
+                <span class="band-color-badge" style="background: #FF7788;">#FF7788</span>
+                <span class="band-color-badge" style="background: #2288DD;">#2288DD</span>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">(MEW tyPINK, MEW tyBLUE)</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Fan Name</td>
+              <td class="info-wiki-value">みゅーたいぱズ / Mewtypers</td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Fan Mark</td>
+              <td class="info-wiki-value" style="font-size: 1.2rem;">🛸</td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Stream Hours</td>
+              <td class="info-wiki-value">21:00-22:00 JST</td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Tags</td>
+              <td class="info-wiki-value">
+                <span class="info-wiki-tag">#バンドリ</span>
+                <span class="info-wiki-tag">#bandoriart</span>
+                <span class="info-wiki-tag">#夢限大みゅーたいぷ</span>
+                <span class="info-wiki-tag">#ゆめみた</span>
+                <span class="info-wiki-tag">#ゆめみた交信中</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Members</td>
+              <td class="info-wiki-value" style="line-height: 1.8;">
+                <div><a href="members/detail.html?id=arale" style="color: #3b82f6; font-weight:800;">Nakamachi Arale</a> (vo.)</div>
+                <div><a href="members/detail.html?id=nonoka" style="color: #ff66b2; font-weight:800;">Miyanaga Nonoka</a> (gt.)</div>
+                <div><a href="members/detail.html?id=ritsu" style="color: #4f46e5; font-weight:800;">Minetsuki Ritsu</a> (gt.)</div>
+                <div><a href="members/detail.html?id=miyako" style="color: #a855f7; font-weight:800;">Fuji Miyako</a> (key.)</div>
+                <div><a href="members/detail.html?id=yuno" style="color: #ff6688; font-weight:800;">Sengoku Yuno</a> (DJ & mp.)</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Anime</td>
+              <td class="info-wiki-value">
+                BanG Dream! YUME∞MITA<br>
+                Ganso! Bandori-chan
+              </td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Manga</td>
+              <td class="info-wiki-value">Music Manga "Yume no Kakera"</td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Singles & Albums</td>
+              <td class="info-wiki-value" style="font-size: 0.9rem; line-height: 1.6;">
+                Start Line<br>
+                Komyu Chakka Fire!<br>
+                Hi-Vision<br>
+                Mayonaka Yuuenchi<br>
+                Progress Sign
+              </td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Lives</td>
+              <td class="info-wiki-value" style="font-size: 0.85rem; line-height: 1.5;">
+                1st LIVE "Metamorphose"<br>
+                Regular Live Series "Preparation!"<br>
+                NANIMONO × Mugendai Mewtype<br>
+                2nd LIVE "Discovery☆Journey"<br>
+                Band Battle Live "Encounter"<br>
+                3rd LIVE "Fleeting Moment"<br>
+                4th LIVE "Unlock the Future"<br>
+                BanG Dream! 10th Anniversary LIVE
+              </td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label" colspan="2" style="background: rgba(255,255,255,0.05); font-weight:800; text-align:center;">Official Links</td>
+            </tr>
+            <tr>
+              <td class="info-wiki-label">Website</td>
+              <td class="info-wiki-value">
+                <a href="https://bang-dream.com/yumemita" target="_blank" style="color: #2288DD; font-weight:700;">bang-dream.com/yumemita</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+
+  </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <p>Mewtype.space là một project dịch thuật cộng đồng, mọi nội dung đều thuộc bản quyền của Bushiroad và Bang Dream! Project[cite: 5]</p>
+    <p>Mewtype.space là một project dịch thuật cộng đồng, mọi nội dung đều thuộc bản quyền của Bushiroad và Bang Dream! Project</p>
   </div>
 </footer>
 
